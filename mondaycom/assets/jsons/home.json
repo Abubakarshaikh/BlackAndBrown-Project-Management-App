@@ -1,0 +1,37 @@
+[
+    {
+        "departmentId": 1,
+        "departmentName": "IT",
+        "totalProjects": 3,
+        "comletedProjects": 2,
+        "createdAt": 0
+    },
+    {
+        "departmentId": 2,
+        "departmentName": "Sales",
+        "totalProjects": 1,
+        "comletedProjects": 1,
+        "createdAt": 0
+    },
+    {
+        "departmentId": 3,
+        "departmentName": "Expansion",
+        "totalProjects": 0,
+        "comletedProjects": 0,
+        "createdAt": 0
+    },
+    {
+        "departmentId": 4,
+        "departmentName": "Operations",
+        "totalProjects": 0,
+        "comletedProjects": 0,
+        "createdAt": 0
+    },
+    {
+        "departmentId": 1,
+        "departmentName": "Software",
+        "totalProjects": 0,
+        "comletedProjects": 0,
+        "createdAt": 0
+    }
+]

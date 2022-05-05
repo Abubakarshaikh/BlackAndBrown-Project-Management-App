@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "departmentName": "IT",
+        "departmentId": 1,
+        "name": "Delivery App",
+        "description": "Complete as soon possiblw",
+        "percentage": "50%",
+        "status": false,
+        "createdAt": 0,
+        "deadLine": 0
+    },
+    {
+        "id": 2,
+        "departmentName": "IT",
+        "departmentId": 1,
+        "name": "Internet Wiring change",
+        "description": "Complete as soon possiblw",
+        "percentage": "100%",
+        "status": true,
+        "createdAt": 0,
+        "deadLine": 0
+    },
+    {
+        "id": 3,
+        "departmentName": "IT",
+        "departmentId": 1,
+        "name": "Internet Wiring change",
+        "description": "Complete as soon possiblw",
+        "percentage": "100%",
+        "status": true,
+        "createdAt": 0,
+        "deadLine": 0
+    },
+    {
+        "id": 4,
+        "departmentName": "Sales",
+        "departmentId": 2,
+        "name": "1 crore sale",
+        "description": "Complete as soon possiblw",
+        "percentage": "80%",
+        "status": false,
+        "createdAt": 0,
+        "deadLine": 0
+    }
+]

@@ -1,0 +1,53 @@
+name: projects
+description: A new Flutter project.
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^8.0.1
+  flow_builder: ^0.0.6
+  equatable: ^2.0.3
+  intl: ^0.17.0
+  hydrated_bloc: ^8.0.0
+  path_provider: ^2.0.9
+  file_picker: ^4.5.0
+  shared_preferences: ^2.0.13
+  uuid: ^3.0.6
+  http: ^0.13.4
+  api_client:
+    path: ../api_client
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/jsons/
+  
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Italic.ttf
+          weight: 400
+          style: italic
