@@ -1,4 +1,4 @@
-  <align> 
+  <p align="center"> 
   
   
   <img src="https://media.giphy.com/media/6dCysB0mzuzzZyk2kw/giphy.gif">
