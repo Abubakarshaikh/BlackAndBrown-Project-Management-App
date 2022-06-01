@@ -21,16 +21,18 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user =
-        context.select<AppBloc, AppState>((AppBloc bloc) => bloc.state);
+    // final user =
+    //     context.select<AppBloc, AppState>((AppBloc bloc) => bloc.state);
     return Card(
       child: InkWell(
         onTap: () {
-          context.read<MessageBloc>().add(MessageLoad(
-              projectId: project.id,
-              projectName: project.name,
-              userId: user.user!.id));
-          context.flow<RouteState>().update((state) => RouteState.message);
+          // context.read<MessageBloc>().add(MessageLoad(
+          //     projectId: project.id,
+          //     projectName: project.name,
+          //     userId: user.user!.id));
+          context
+              .flow<RouteState>()
+              .update((state) => RouteState.projectsDetails);
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

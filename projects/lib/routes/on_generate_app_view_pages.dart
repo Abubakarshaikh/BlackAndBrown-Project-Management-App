@@ -6,6 +6,8 @@ import 'package:projects/projects/projects.dart';
 import 'package:projects/routes/routes.dart';
 import 'package:projects/splash/spash_page.dart';
 
+import '../project_details/view/project_details_page.dart';
+
 List<Page<dynamic>> onGenerateAppViewPages(
     RouteState state, List<Page<dynamic>> page) {
   switch (state) {
@@ -29,6 +31,11 @@ List<Page<dynamic>> onGenerateAppViewPages(
     case RouteState.startup:
       return [
         App.page(),
+      ];
+    case RouteState.projectsDetails:
+      return [
+        ProjectsPage.page(),
+        ProjectDetailsPage.page(),
       ];
     default:
       return [

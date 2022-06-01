@@ -17,6 +17,7 @@ dependencies:
   path_provider: ^2.0.9
   file_picker: ^4.5.0
   shared_preferences: ^2.0.13
+  percent_indicator: ^4.2.2
   uuid: ^3.0.6
   http: ^0.13.4
   api_client:

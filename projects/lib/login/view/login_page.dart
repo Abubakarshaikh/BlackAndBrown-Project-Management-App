@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projects/colors/colors.dart';
-import 'package:projects/typography/text_styles.dart';
 
 import '../widgets/login_form.dart';
 
@@ -20,14 +18,6 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const LoginForm(),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(bottom: 12),
-                  //   child: Text(
-                  //     "Contact us, we're here 24/7",
-                  //     style: MondayTextStyle.bodyXSmall
-                  //         .copyWith(color: MondayColors.blue50),
-                  //   ),
-                  // ),
                 ],
               ),
             ),

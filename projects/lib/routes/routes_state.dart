@@ -4,6 +4,7 @@ enum RouteState {
   authenticated,
   unauthenticated,
   projects,
+  projectsDetails,
   createProject,
   message,
 }

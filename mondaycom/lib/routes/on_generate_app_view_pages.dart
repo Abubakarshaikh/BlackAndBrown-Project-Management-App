@@ -4,6 +4,7 @@ import 'package:mondaycom/app/app.dart';
 import 'package:mondaycom/departments/department.dart';
 import 'package:mondaycom/login/view/login_page.dart';
 import 'package:mondaycom/messages/view/messages_page.dart';
+import 'package:mondaycom/project_details/view/project_details_page.dart';
 import 'package:mondaycom/projects/projects.dart';
 import 'package:mondaycom/routes/routes.dart';
 import 'package:mondaycom/splash/spash_page.dart';
@@ -39,9 +40,15 @@ List<Page<dynamic>> onGenerateAppViewPages(
       return [
         App.page(),
       ];
-   case RouteState.splash:
+    case RouteState.splash:
       return [
         SplashPage.page(),
+      ];
+    case RouteState.projectsDetails:
+      return [
+        DepartmentsPage.page(),
+        ProjectsPage.page(),
+        ProjectDetailsPage.page(),
       ];
     default:
       return [

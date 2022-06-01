@@ -1,11 +1,9 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mondaycom/app/bloc/app_bloc.dart';
 import 'package:mondaycom/login/bloc/login_bloc.dart';
 import 'package:mondaycom/routes/routes.dart';
 
-import '../../app/view/app.dart';
 import '../../colors/colors.dart';
 import '../../typography/font_weights.dart';
 import '../../typography/text_styles.dart';
@@ -57,6 +55,7 @@ class _InputPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: MondayTextStyle.bodySmall,
       obscureText: true,
       cursorColor: MondayColors.blue50,
       decoration: InputDecoration(
@@ -94,6 +93,7 @@ class _InputEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: MondayTextStyle.bodySmall,
       cursorColor: MondayColors.blue50,
       decoration: InputDecoration(
         contentPadding:
