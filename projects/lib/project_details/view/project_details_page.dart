@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-
 import '../../colors/colors.dart';
 import '../../typography/text_styles.dart';
 
@@ -42,7 +41,7 @@ class ProjectDetailsPage extends StatelessWidget {
                           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6.0),
-                        border: Border.all(),
+                        border: Border.all(color: Colors.grey),
                       ),
                     ),
                   ],
@@ -63,23 +62,23 @@ class ProjectDetailsPage extends StatelessWidget {
                           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6.0),
-                        border: Border.all(),
+                        border: Border.all(color: Colors.grey),
                       ),
                     ),
                   ],
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6.0),
-                  border: Border.all(),
+                  border: Border.all(color: Colors.grey),
                 ),
                 child: Column(
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: Text("Progress Bar",
+                      child: Text("Task Bar",
                           style: MondayTextStyle.body
                               .copyWith(fontWeight: FontWeight.w600)),
                     ),
