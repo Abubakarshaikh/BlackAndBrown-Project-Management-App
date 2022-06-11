@@ -6,7 +6,7 @@ class Project {
   final String name;
   final String descriptions;
   final bool status;
-  final int percentage;
+  final double percentage;
   final DateTime deadline;
   final DateTime createdAt;
   const Project({
@@ -26,7 +26,7 @@ class Project {
     String? name,
     String? descriptions,
     bool? status,
-    int? percentage,
+    double? percentage,
     DateTime? deadline,
     DateTime? createdAt,
   }) {
@@ -62,9 +62,9 @@ class Project {
       name: map['name'] ?? '',
       descriptions: map['descriptions'] ?? '',
       status: map['status'] ?? false,
-      percentage: map['percentage']?.toInt() ?? 0,
-      deadline: DateTime.fromMillisecondsSinceEpoch(map['deadline'] * 1000),
-      createdAt: DateTime.fromMillisecondsSinceEpoch(map['createdAt'] * 1000),
+      percentage: map['percentage']?.toDouble() ?? 0.0,
+      deadline: DateTime.fromMillisecondsSinceEpoch(map['deadline']),
+      createdAt: DateTime.fromMillisecondsSinceEpoch(map['createdAt']),
     );
   }
 
@@ -81,27 +81,27 @@ class Project {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-
+  
     return other is Project &&
-        other.id == id &&
-        other.departmentName == departmentName &&
-        other.name == name &&
-        other.descriptions == descriptions &&
-        other.status == status &&
-        other.percentage == percentage &&
-        other.deadline == deadline &&
-        other.createdAt == createdAt;
+      other.id == id &&
+      other.departmentName == departmentName &&
+      other.name == name &&
+      other.descriptions == descriptions &&
+      other.status == status &&
+      other.percentage == percentage &&
+      other.deadline == deadline &&
+      other.createdAt == createdAt;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-        departmentName.hashCode ^
-        name.hashCode ^
-        descriptions.hashCode ^
-        status.hashCode ^
-        percentage.hashCode ^
-        deadline.hashCode ^
-        createdAt.hashCode;
+      departmentName.hashCode ^
+      name.hashCode ^
+      descriptions.hashCode ^
+      status.hashCode ^
+      percentage.hashCode ^
+      deadline.hashCode ^
+      createdAt.hashCode;
   }
 }

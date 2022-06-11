@@ -5,7 +5,7 @@ enum ProjectStatus { initial, loading, success, failure }
 class ProjectDetailsState extends Equatable {
   const ProjectDetailsState(
       {this.project, this.status = ProjectStatus.initial});
-  final Project? project;
+  final ProjectDetail? project;
   final ProjectStatus status;
 
   @override

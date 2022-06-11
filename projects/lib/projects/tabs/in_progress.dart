@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:api_client/api_client.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,13 +13,16 @@ class InProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("in progress ${projectModels.isNotEmpty}");
     return Column(
       children: [
         Expanded(
           child: projectModels.isNotEmpty
               ? RefreshIndicator(
                   onRefresh: () async {
-                    context.read<ProjectBloc>().add(const ProjectRefreshIndicator());
+                    context
+                        .read<ProjectBloc>()
+                        .add(const ProjectRefreshIndicator());
                   },
                   child: ListView.builder(
                     padding: const EdgeInsets.only(top: 8, left: 8, right: 8),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:api_client/api_client.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,12 +10,11 @@ import '../widgets/project_card.dart';
 class NewProject extends StatelessWidget {
   final List<Project> projectModels;
 
-  const NewProject(
-      {Key? key, required this.projectModels})
-      : super(key: key);
+  const NewProject({Key? key, required this.projectModels}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    log("new ${projectModels.isEmpty}");
     return Column(
       children: [
         Expanded(

@@ -30,7 +30,7 @@ class MondayComTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
-        fixedSize: const Size(double.infinity, 54),
+        fixedSize: const Size(double.infinity, 45),
         textStyle: MondayTextStyle.bodySmall,
         primary: MondayColors.red50,
       ),

@@ -14,3 +14,11 @@ class ProjectLoad extends ProjectDetailsEvent {
   @override
   List<Object> get props => [project];
 }
+
+class ProjectUpdated extends ProjectDetailsEvent {
+  final Project project;
+  const ProjectUpdated({required this.project});
+
+  @override
+  List<Object> get props => [project];
+}

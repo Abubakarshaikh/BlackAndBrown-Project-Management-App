@@ -41,13 +41,13 @@ class ProjectsPage extends StatelessWidget {
             tabs: [
               Tab(
                   text:
-                      "New Assign(${projects.projects.where((project) => project.percentage < 1).length})"),
+                      "New Assign(${projects.projects.where((project) => project.percentage <= 0.0).length})"),
               Tab(
                   text:
-                      "In Progress(${projects.projects.where((project) => project.percentage > 1 && project.percentage < 99).length})"),
+                      "In Progress(${projects.projects.where((project) => project.percentage >= 0.1 && project.percentage <= 0.9).length})"),
               Tab(
                   text:
-                      "Resolved(${projects.projects.where((project) => project.percentage > 99).length})"),
+                      "Completed(${projects.projects.where((project) => project.percentage > 0.9).length})"),
             ],
           ),
         ),
@@ -77,20 +77,21 @@ class ProjectListTile extends StatelessWidget {
               children: [
                 NewProject(
                     projectModels: state.projects
-                        .where((project) => project.percentage < 1)
+                        .where((project) => project.percentage <= 0.0)
                         .toList()
                         .reversed
                         .toList()),
                 InProgress(
                     projectModels: state.projects
                         .where((project) =>
-                            project.percentage > 1 && project.percentage < 99)
+                            project.percentage > 0.0 &&
+                            project.percentage <= 0.9)
                         .toList()
                         .reversed
                         .toList()),
                 ResolvedProjects(
                     projectModels: state.projects
-                        .where((project) => project.percentage > 99)
+                        .where((project) => project.percentage > 0.9)
                         .toList()
                         .reversed
                         .toList()),

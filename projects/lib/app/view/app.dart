@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:projects/app/bloc/app_bloc.dart';
 import 'package:projects/login/bloc/login_bloc.dart';
 import 'package:projects/messages/bloc/message_bloc.dart';
+import 'package:projects/project_details/bloc/project_details_bloc.dart';
 import 'package:projects/projects/projects.dart';
 import 'package:projects/routes/routes_state.dart';
 import 'package:projects/theme/theme.dart';
@@ -29,9 +30,9 @@ class App extends StatelessWidget {
         BlocProvider(
           create: (_) => MessageBloc(MessageProvider()),
         ),
-       
         BlocProvider(create: (_) => ProjectBloc(ProjectProvider())),
-      
+        BlocProvider(
+            create: (_) => ProjectDetailsBloc(ProjectDetailProvider())),
       ],
       child: MaterialApp(
         theme: MondayComTheme.standard,

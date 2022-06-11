@@ -1,7 +1,10 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:http/http.dart' as http;
+
+void main() async {
+  final obj = ApiClient();
+  await obj.update();
+}
 
 class RequestFailure implements Exception {}
 
@@ -18,7 +21,6 @@ class ApiClient {
     final request = Uri.http(_baseUrl, '/apps/monday/api/$path');
     final response = await _httpClient.get(request);
 
-    log("---------${response.body}-------");
     if (response.statusCode != 200) {
       throw RequestFailure;
     }
@@ -75,25 +77,40 @@ class ApiClient {
     }
   }
 
-  Future<void> update(String path, String body) async {
-    final request = Uri.http(_baseUrl, '/web/projects/rest_api/api/$path');
+  Future<void> update(
+      [String path = '', String body = '', int id = 159]) async {
+    final request = Uri.parse(
+        "https://bbit-sol.com/apps/monday/api/project/update.php?id=$id");
     final response = await _httpClient.put(request, body: body);
-
     if (response.statusCode != 200) {
       throw RequestFailure();
     }
-
-    log("---${response.body}---");
   }
 
   Future<void> loginByEmailAndPassword(String data, String path) async {
-    log("--------------${data}");
     final request = Uri.http(_baseUrl, '/apps/monday/api/$path');
     final response = await _httpClient.post(request, body: data);
 
     if (response.statusCode != 200) {
       throw RequestFailure;
     }
-    print("---------${json.decode(response.body)}--------");
+  }
+
+  Future<Map<String, dynamic>> readSingle(String path, int id) async {
+    final request =
+        Uri.parse("https://bbit-sol.com/apps/monday/api/$path?id=$id");
+    final response = await _httpClient.get(request);
+
+    if (response.statusCode != 200) {
+      throw RequestFailure;
+    }
+    final Map<String, dynamic> fromJson =
+        json.decode(response.body) as Map<String, dynamic>;
+
+    if (fromJson.isEmpty) {
+      throw NotFoundFailure;
+    }
+
+    return fromJson;
   }
 }

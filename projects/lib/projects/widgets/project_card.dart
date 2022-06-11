@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:api_client/api_client.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:projects/colors/colors.dart';
 import 'package:projects/messages/bloc/message_bloc.dart';
+import 'package:projects/project_details/bloc/project_details_bloc.dart';
 import 'package:projects/routes/routes.dart';
 import 'package:projects/typography/text_styles.dart';
 
@@ -23,6 +26,8 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // final user =
     //     context.select<AppBloc, AppState>((AppBloc bloc) => bloc.state);
+    log("${project.id}");
+    context.read<ProjectDetailsBloc>().add(ProjectDetailLoad(id: project.id));
     return Card(
       child: InkWell(
         onTap: () {
@@ -67,7 +72,7 @@ class ProjectCard extends StatelessWidget {
                 ),
                 ListTile(
                   trailing: Text(
-                    "${project.percentage}%",
+                    "${(project.percentage * 100).toStringAsFixed(0)}%",
                     style: MondayTextStyle.bodySmall.copyWith(
                       fontWeight: FontWeight.w600,
                       color: project.status
@@ -80,8 +85,8 @@ class ProjectCard extends StatelessWidget {
                           color: MondayColors.greenPrimary)
                       : const Icon(Icons.close, color: MondayColors.red50),
                   title: Text(project.name, style: MondayTextStyle.body),
-                  subtitle: Text(project.descriptions,
-                      style: MondayTextStyle.bodyXSmall),
+                  // subtitle: Text(project.descriptions,
+                  //     style: MondayTextStyle.bodyXSmall),
                 ),
               ],
             ),
